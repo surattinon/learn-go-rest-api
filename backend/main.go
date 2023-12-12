@@ -3,6 +3,7 @@ package main
 
 // Import the Gin library and net/http
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -10,13 +11,14 @@ import (
 func main() {
 	// Create a new gin router
 	r := gin.New()
+	r.Use(cors.Default())
 	// Create a new route with GET method
 	r.GET("/", func(c *gin.Context) {
 		// Return a JSON response with status code 200
 		c.JSON(http.StatusOK, books)
 	})
 	// Run the server on port 8080
-	r.Run(":8080")
+	r.Run(":3000")
 }
 
 // Create a new struct for books
