@@ -1,15 +1,33 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Test API</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="fetch.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Books</title>
   </head>
   <body>
     <div class="container">
-      <div class="api-rerult" id="myBook"></div>
+      <h1>Fetch Books</h1>
+      <div id="bookList">
+        <h1>Book List</h1>
+        <form>
+          <input
+            type="text"
+            oninput="handleInput(event)"
+            id="bookName"
+            placeholder="Book Name"
+          />
+          <!-- <button type="submit"></button> -->
+        </form>
+        <h2>Book Name : <span id="bookTitle"></span></h2>
+        <h2>Book Author : <span id="bookAuthor"></span></h2>
+      </div>
     </div>
+    <script src="fetch.js"></script>
+    <script>
+      function handleInput(event) {
+        console.log(event.target.value);
+      }
+    </script>
   </body>
 </html>

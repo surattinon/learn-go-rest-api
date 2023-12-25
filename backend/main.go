@@ -13,7 +13,7 @@ func main() {
 	r := gin.New()
 	r.Use(cors.Default())
 	// Create a new route with GET method
-	r.GET("/", func(c *gin.Context) {
+	r.GET("/books", func(c *gin.Context) {
 		// Return a JSON response with status code 200
 		c.JSON(http.StatusOK, books)
 	})
